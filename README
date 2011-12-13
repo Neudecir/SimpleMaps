@@ -1,14 +1,14 @@
-O objetivo deste serviço é fornecer funcionalidades para que os usuários possam inserir objetos multimídia sobre mapas. 
-Tais objetos podem ser imagens, vídeos, áudios, textos ou até mesmo desenhos sobre o mapa. Ao inserir tais artefatos 
-sobre o mapa, os mesmos devem ser geo-codificados, ou seja, para cada anotação deve-se atribuir um valor de latitude e 
-longitude. Além destes atributos, deverão existir outros que configuram as meta-informações de cada anotação, como por 
-exemplo: data de criação da anotação, autor da anotação e descrição da anotação.
+O objetivo deste servico e fornecer funcionalidades para que os usuarios possam inserir objetos multimidia sobre mapas. 
+Tais objetos podem ser imagens, videos, audios, textos ou ate mesmo desenhos sobre o mapa. Ao inserir tais artefatos 
+sobre o mapa, os mesmos devem ser geo-codificados, ou seja, para cada anotacao deve-se atribuir um valor de latitude e 
+longitude. Alem destes atributos, deverao existir outros que configuram as meta-informacoes de cada anotacao, como por 
+exemplo: data de criacao da anotacao, autor da anotacao e descricao da anotacao.
 
 Este componente deve ser disponibilizado como SaaS (software as a service), podendo ser inserido em qualquer site Web 
 na forma de um Web Widget do tipo mapa. Tal componente pode ser utilizado em diversos tipos de sites, tais como: sites 
-voltados para o registro de memórias, histórias, fatos ou informações genéricas sobre lugares específicos. Portanto, 
-este componente deverá ter implementado mecanismos para a gestão de vários usuários e/ou aplicações, incluindo controle 
-de acesso e uma arquitetura escalável, por exemplo.
+voltados para o registro de memorias, historias, fatos ou informações genericas sobre lugares especificos. Portanto, 
+este componente devera ter implementado mecanismos para a gestao de varios usuarios e/ou aplicacoes, incluindo controle 
+de acesso e uma arquitetura escalavel, por exemplo.
 
-Este projeto será desenvolvido durante a disciplina de Escritório de Projetos 4, no primeiro semestre de 2012, pela 
+Este projeto sera desenvolvido durante a disciplina de Escritorio de Projetos 4, no primeiro semestre de 2012, pela 
 turma do quarto semestre do curso de Análise e Desenvolvimento de Software da BandTec.
