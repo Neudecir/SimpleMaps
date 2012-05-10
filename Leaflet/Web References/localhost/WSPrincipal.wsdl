@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="novoCadastro">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="senha" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rptSenha" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="novoCadastroResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="novoCadastroResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MarcaPontoPersistencia">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="lat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lng" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="texto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="id_mapa" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MarcaPontoPersistenciaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MarcaPontoPersistenciaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NovoMapa">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nome_mapa" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NovoMapaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NovoMapaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CarregaInformacoes">
+        <s:complexType />
+      </s:element>
+      <s:element name="CarregaInformacoesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CarregaInformacoesResult" type="tns:ArrayOfPonto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPonto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Ponto" nillable="true" type="tns:Ponto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Ponto">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id_ponto" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="nome" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="latitude" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="longitude" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="texto" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="id_tipo_mapa" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="novoCadastroSoapIn">
+    <wsdl:part name="parameters" element="tns:novoCadastro" />
+  </wsdl:message>
+  <wsdl:message name="novoCadastroSoapOut">
+    <wsdl:part name="parameters" element="tns:novoCadastroResponse" />
+  </wsdl:message>
+  <wsdl:message name="MarcaPontoPersistenciaSoapIn">
+    <wsdl:part name="parameters" element="tns:MarcaPontoPersistencia" />
+  </wsdl:message>
+  <wsdl:message name="MarcaPontoPersistenciaSoapOut">
+    <wsdl:part name="parameters" element="tns:MarcaPontoPersistenciaResponse" />
+  </wsdl:message>
+  <wsdl:message name="NovoMapaSoapIn">
+    <wsdl:part name="parameters" element="tns:NovoMapa" />
+  </wsdl:message>
+  <wsdl:message name="NovoMapaSoapOut">
+    <wsdl:part name="parameters" element="tns:NovoMapaResponse" />
+  </wsdl:message>
+  <wsdl:message name="CarregaInformacoesSoapIn">
+    <wsdl:part name="parameters" element="tns:CarregaInformacoes" />
+  </wsdl:message>
+  <wsdl:message name="CarregaInformacoesSoapOut">
+    <wsdl:part name="parameters" element="tns:CarregaInformacoesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WSPrincipalSoap">
+    <wsdl:operation name="novoCadastro">
+      <wsdl:input message="tns:novoCadastroSoapIn" />
+      <wsdl:output message="tns:novoCadastroSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MarcaPontoPersistencia">
+      <wsdl:input message="tns:MarcaPontoPersistenciaSoapIn" />
+      <wsdl:output message="tns:MarcaPontoPersistenciaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NovoMapa">
+      <wsdl:input message="tns:NovoMapaSoapIn" />
+      <wsdl:output message="tns:NovoMapaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CarregaInformacoes">
+      <wsdl:input message="tns:CarregaInformacoesSoapIn" />
+      <wsdl:output message="tns:CarregaInformacoesSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSPrincipalSoap" type="tns:WSPrincipalSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="novoCadastro">
+      <soap:operation soapAction="http://tempuri.org/novoCadastro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MarcaPontoPersistencia">
+      <soap:operation soapAction="http://tempuri.org/MarcaPontoPersistencia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NovoMapa">
+      <soap:operation soapAction="http://tempuri.org/NovoMapa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CarregaInformacoes">
+      <soap:operation soapAction="http://tempuri.org/CarregaInformacoes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSPrincipalSoap12" type="tns:WSPrincipalSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="novoCadastro">
+      <soap12:operation soapAction="http://tempuri.org/novoCadastro" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MarcaPontoPersistencia">
+      <soap12:operation soapAction="http://tempuri.org/MarcaPontoPersistencia" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NovoMapa">
+      <soap12:operation soapAction="http://tempuri.org/NovoMapa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CarregaInformacoes">
+      <soap12:operation soapAction="http://tempuri.org/CarregaInformacoes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSPrincipal">
+    <wsdl:port name="WSPrincipalSoap" binding="tns:WSPrincipalSoap">
+      <soap:address location="http://localhost:9613/WSPrincipal.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSPrincipalSoap12" binding="tns:WSPrincipalSoap12">
+      <soap12:address location="http://localhost:9613/WSPrincipal.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

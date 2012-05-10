@@ -1,0 +1,127 @@
+﻿html
+{
+	height: 100%;
+}
+body
+{
+	height: 85%;
+	width: 100%;
+	padding: 0pt;
+	margin: 0pt;
+	font-family: Sans-Serif;
+	font-size: medium;
+	color: #000000;
+	background-color: #A6CAF0;
+}
+table
+{
+	font-family: Sans-Serif;
+	font-size: medium;
+	color: #000000;
+	border: 1px solid #A6CAF0;
+}
+table.centralizadora
+{
+	height: 100%;
+	width: 100%;
+	background-color: Transparent;
+	border-style: none;
+}
+a
+{
+	text-decoration: none;
+}
+#map
+{
+	height: 100%;
+}
+div.escondedor
+{
+	z-index: 10;
+	position: fixed;
+	top: 0pt;
+	right: 0pt;
+	height: 100%;
+	width: 100%;
+	visibility: hidden;
+	background-image: url( 'escondedor.png' );
+	background-repeat: repeat;
+}
+input[type="text"]
+{
+	border: 1px solid #000080;
+	color: #000000;
+}
+input[type="password"]
+{
+	border: 1px solid #000080;
+	color: #000000;
+}
+input[type="file"]
+{
+	border: 1px solid #FFCC00;
+	background-color: #FFFF00;
+	color: #000000;
+}
+input[type="button"], input[type="submit"]
+{
+	cursor: pointer;
+}
+.txtCadastro
+{
+	width: 200pt;
+}
+.textoPequeno
+{
+	font-size: smaller;
+}
+.floatDiv
+{
+	position: relative;
+	margin: 0pt;
+	padding: 0pt;
+	border: 2px dotted #000;
+	background-color: Transparent;
+}
+#sddm
+{
+	margin: 0pt;
+	padding: 0pt;
+	white-space: nowrap;
+}
+#sddm li
+{
+	cursor: pointer;
+	margin: 0pt;
+	padding: 2pt 15pt;
+	list-style: none;
+	float: left;
+	font-weight: bold;
+	position: relative;
+	z-index: 9;
+}
+#sddm li div
+{
+	position: absolute;
+	display: none;
+	margin: 0pt;
+	padding: 0pt;
+	border: 1px solid #fff;
+}
+#sddm li div span
+{
+	display: block;
+	margin: 0pt;
+	padding: 4pt 8pt;
+	white-space: nowrap;
+	text-align: left;
+	background-color: #EAECFF;
+	border: 1px solid #EAECFF;
+	color: #2875DE;
+}
+#sddm li div span:hover
+{
+	color: #FFF;
+	background-color: #49A3FF;
+	border: 1px solid #5970B2;
+}
