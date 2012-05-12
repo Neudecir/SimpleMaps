@@ -17,7 +17,7 @@ namespace Leaflet
     {
         public static MySqlConnection criarConexao()
         {
-            return new MySqlConnection("Server=187.45.196.236;Database=genialsystems;Uid=genialsystems;Pwd=a1b2c3;");
+            return new MySqlConnection("");
         }
 
     }
